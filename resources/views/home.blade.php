@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
-    @vite('resources/js/app.js')
-</head>
+@extends('layouts.app')
+
+@section('content')
 <body>
     <div class="container">
-        <div class="row">
-            @foreach ($movies as $movie )
-            <div class="col-4">
-                <div class="card">
+        <div class="row g-4">
+            @foreach ($movies as $movie)
+                <div class="col-4">
+                    <div class="card h-100">
                         <div class="card-body">
                             <h3>Titolo: {{ $movie->title }} </h3>
                             <h4>Titolo originale: {{ $movie->original_title }} </h4>
@@ -23,4 +18,4 @@
         </div>
     </div>
 </body>
-</html>
+@endsection
